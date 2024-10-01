@@ -1,0 +1,66 @@
+.div{
+    text-align: center;
+    margin-top: 10%;
+    background-color: rgb(0, 0, 0, 0.7);
+    color: aliceblue;
+    padding: 40px;
+    margin-left: 35%;
+    margin-right: 35%;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: larger;
+    font-weight: bold;
+    
+}
+
+h1{
+    text-align: center;
+    color: azure;
+}
+
+
+p{
+    padding: 5px;
+}
+
+input{
+    width: 200px;
+    height: 18px;
+    
+}
+
+button{
+    color: antiquewhite;
+    background-color: rgb(58, 58, 228);
+    border: 0px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 45%;
+    font-size: medium;
+}
+
+button:hover{
+    background-color: rgb(111, 111, 227);
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 0.5px rgb(33, 33, 38);
+    transform: scale(1.1);
+    transition: all 0.5s;
+    
+}
+#login_a{
+    color: antiquewhite;
+    background-color: rgb(73, 176, 5);
+    margin-left: 40%;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: small;
+    text-decoration: none;
+}
+
+#login_a:hover{
+    box-shadow: 3px 3px 3px 0.5px rgb(20, 7, 33);
+    background-color: rgb(29, 131, 32);
+    transform: scale(1.1);
+    transition: all 0.5s;
+    
+}

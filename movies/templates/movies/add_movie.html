@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Movie</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    {% block extra_css %} <link rel="stylesheet" href="{% static 'css/add.css' %}"> {% endblock %}
+    
+
+</head>
+<body>
+    <h1>Adicione um filme</h1>
+    <div id="div">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Adicionar filme</button>
+        
+    </form>
+    
+    </div>
+    <br><br>
+    <a href="{% url 'movie_list' %}">Ver Minha Lista</a>
+</body>
+</html>

@@ -1,0 +1,84 @@
+h1{
+    
+    color: azure;
+    text-align: center;
+}
+
+#div{
+    justify-items: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    
+    
+    
+}
+
+label{
+    color: azure;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#id_custom_description{
+    width: 150%;
+    height: 150%;
+    border-radius: 20px;
+    
+
+
+}
+
+input{
+    width: 100%;
+    height: 24px;
+    border-radius: 5px;
+    
+}
+
+button{
+    background-color: green;
+    color: azure;
+    padding: 15px;
+    margin-left: 100%;
+    width: 50%;
+    border-color: white;
+    border-radius: 30px;
+    font: 1em sans-serif;
+    font-size: medium;
+    font-weight: bold;
+
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 0.5px rgb(207, 207, 212);
+    transform: scale(1.1);
+    transition: all 0.5s;
+    background-color: rgb(4, 84, 4);
+}
+
+
+a{
+    text-align: center;
+    background-color: blueviolet;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 30px;
+    font: 1em sans-serif;
+    margin-left: 58.5%;  
+    border-color: azure;
+    
+}
+
+a:hover{
+    background-color: rgb(86, 22, 146);
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.5s;
+    box-shadow: 3px 3px 3px 0.5px rgb(88, 26, 145);
+}
+

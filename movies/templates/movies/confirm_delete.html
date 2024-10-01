@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block title %}Confirmar Exclusão{% endblock %}
+
+{% block content %}
+    <h2>Você tem certeza que deseja excluir o filme "{{ movie.title }}"?</h2>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+        <a href="{% url 'movie_list' %}">Cancelar</a>
+    </form>
+{% endblock %}
+</body>
+</html>
