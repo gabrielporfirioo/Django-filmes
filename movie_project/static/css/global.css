@@ -1,10 +1,15 @@
-
-
-/*             LOGIN             */
-body{
-    background-image: url("fundo_ceu.jpg");
-    background-size: 100%;
+body {
+    background-image: url("{% static 'images/fundo_ceu.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-attachment: fixed;
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh; /* Garante altura mínima de 100% da viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-

@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
-    {% block extra_css %} <link rel="stylesheet" href="{% static 'css/signup.css' %}"> {% endblock %}
-    
-    
-
+    {% block extra_css %}
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    {% endblock %}
 </head>
 <body>
-    
-   <h2>Cadastre-se</h2>
-   <div class="div"> 
-   <form class="signupForm" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign Up</button>
-        
-    </form>
-    
+    <div class="container">
+        <h2>Cadastre-se</h2>
+        <div class="form-container"> 
+            <form class="signupForm" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <a href="{% url 'login' %}" class="back-link">Voltar</a>
     </div>
-    <br>
-    <a  href="{% url 'login' %}">voltar</a>
-    
 </body>
 </html>

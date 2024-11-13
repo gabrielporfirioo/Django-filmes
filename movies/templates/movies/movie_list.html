@@ -1,62 +1,67 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Movies</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
-    {% block extra_css %} <link rel="stylesheet" href="{% static 'css/list.css' %}"> {% endblock %}
+    {% block extra_css %}
+        <link rel="stylesheet" href="{% static 'css/list.css' %}">
+    {% endblock %}
 </head>
 <body>
-  <header>
-    <h1>My Favorite Movies</h1>
-    <a id="logout" href="{% url 'login' %}">Exit</a>
-</header>
-    
-    {% block content %}
-    <h2>Lista de Filmes:</h2>
-     <a id="add" href="{% url 'add_movie' %}"> Adicionar filme +</a>
-     
-    <br><br><br><br>
-     <ul>
-        {% for movie in movies %}
-        <li>
-            
-            
-            <h3>{{ movie.title }} ({{ movie.year }})</h3>
-           <!-- <p><strong>Sinopse:</strong> {{ movie.description }}</p> --> 
-            <p id="description"><strong id="personalizada">Descrição Personalizada:</strong> {{ movie.custom_description }}</p>
-            {% if movie.poster_url %}
-            <img src="{{ movie.poster_url }}" alt="Poster de {{ movie.title }}" width="150">
-            {% endif %}
-             
-            <form action="{% url 'delete_movie' movie.id %}" method="POST" >
-                {% csrf_token %}
-                <button type="submit" id="btn">Excluir</button>
-            </form>
-           
-        </li>
+    <header>
+        <div class="container">
+            <h1>My Favorite Movies</h1>
+            <a id="logout" href="{% url 'login' %}">Sair</a>
+        </div>
+    </header>
 
-        
+    <main>
+        {% block content %}
+            <div class="content-container">
+                <div class="header-content">
+                    <h2>Lista de Filmes:</h2>
+                    <a id="add" href="{% url 'add_movie' %}">Adicionar filme +</a>
+                </div>
+                <ul class="movie-list">
+                    {% for movie in movies %}
+                        <li class="movie-item">
+                            <div class="movie-details">
+                                <h3>{{ movie.title }} ({{ movie.year }})</h3>
+                                <p id="description">
+                                    <strong id="personalizada">Descrição Personalizada:</strong> {{ movie.custom_description }}
+                                </p>
+                            </div>
+                            {% if movie.poster_url %}
+                                <div class="movie-poster">
+                                    <img src="{{ movie.poster_url }}" alt="Poster de {{ movie.title }}">
+                                </div>
+                            {% endif %}
+                            <form action="{% url 'delete_movie' movie.id %}" method="POST" onsubmit="return confirmDelete();">
+                                {% csrf_token %}
+                                <button type="submit" id="btn">Excluir</button>
+                            </form>
+                        </li>
+                    {% empty %}
+                        <p>Você ainda não adicionou nenhum filme.</p>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endblock %}
+    </main>
 
-        {% empty %}
-        <p>Você ainda não adicionou nenhum filme.</p>
-        
-        {% endfor %}
-    </ul>
-{% endblock %}
-   
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Movies. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-
-    
-</body>
-
-<script>
-    function confirmDelete() {
-        return confirm("Você tem certeza que deseja excluir este filme?");
-        
-    }
+    <script>
+        function confirmDelete() {
+            return confirm("Você tem certeza que deseja excluir este filme?");
+        }
     </script>
-
-
+</body>
 </html>
